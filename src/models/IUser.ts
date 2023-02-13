@@ -1,5 +1,5 @@
 export interface UserCpf {
-  cpf: number;
+  cpf: string;
 }
 
 export interface IUser extends UserCpf {

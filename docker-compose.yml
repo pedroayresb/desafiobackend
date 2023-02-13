@@ -26,5 +26,6 @@ services:
       DB_PASSWORD: password
       DB_NAME: db
       DB_PORT: 5432
+      APP_PORT: 3000
     volumes:
       - .:/app

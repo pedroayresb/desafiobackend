@@ -12,5 +12,5 @@ datasource db {
 
 model User {
   id        Int      @default(autoincrement()) @id
-  cpf      Int
+  cpf      String    @unique
 }

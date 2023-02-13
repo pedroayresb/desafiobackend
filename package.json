@@ -7,7 +7,7 @@
     "build": "npx -y tsc",
     "test": "mocha -r ts-node/register ./src/tests/*$NAME*.{test,spec}.ts -t 10000 --exit",
     "test:coverage": "nyc npm run test",
-    "start": "node .",
+    "start": "ts-node .",
     "dev": "nodemon --watch \"./src/**\" ./src/index.ts"
   },
   "dependencies": {
