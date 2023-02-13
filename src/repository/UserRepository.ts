@@ -31,4 +31,24 @@ export default class UserRepository {
     prisma.$disconnect();
     return newUser;
   }
+
+  public async delete(cpf: string): Promise<IUser> {
+    const prisma = this.persistence.connect();
+    const exists = await this.findByCpf(cpf);
+    if (!exists) throw new Error('ERRUserDoesNotExists');
+    const deletedUser = await prisma.user.delete({
+      where: {
+        cpf,
+      },
+    });
+    prisma.$disconnect();
+    return deletedUser;
+  }
+
+  public async findAll(): Promise<IUser[]> {
+    const prisma = this.persistence.connect();
+    const users = await prisma.user.findMany();
+    prisma.$disconnect();
+    return users;
+  }
 }

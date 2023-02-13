@@ -8,10 +8,15 @@ class ErrorHandler {
     next: NextFunction,
   ) {
     if (error.message === 'ERRInvalidCpf') {
-      return res.status(400).json({ error: error.message });
+      res.status(400).json({ error: error.message });
+      next();
     }
     if (error.message === 'ERRUserAlreadyExists') {
-      return res.status(409).json({ error: error.message });
+      res.status(409).json({ error: error.message });
+      next();
+    }
+    if (error.message === 'ERRUserDoesNotExists') {
+      res.status(404).json({ error: error.message });
     }
 
     next();

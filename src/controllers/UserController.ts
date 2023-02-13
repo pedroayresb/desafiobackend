@@ -21,7 +21,36 @@ export default class UserController {
       const user: IUser = await this.userService.create(cpf);
       return this.res.status(201).json(user);
     } catch (error) {
-      console.log(error);
+      return this.next(error);
+    }
+  }
+
+  public async deleteUser() {
+    try {
+      const { cpf } = this.req.params;
+      const user: IUser = await this.userService.delete(cpf);
+      return this.res.status(200).json(user);
+    } catch (error) {
+      return this.next(error);
+    }
+  }
+
+  public async findUser() {
+    try {
+      const { cpf } = this.req.params;
+      const user: IUser | null = await this.userService.findByCpf(cpf);
+      if (!user) return this.res.status(404).json({ message: 'User not found' });
+      return this.res.status(200).json(user);
+    } catch (error) {
+      return this.next(error);
+    }
+  }
+
+  public async findAllUsers() {
+    try {
+      const users: IUser[] = await this.userService.findAll();
+      return this.res.status(200).json(users);
+    } catch (error) {
       return this.next(error);
     }
   }

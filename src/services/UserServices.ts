@@ -14,4 +14,21 @@ export default class UserService {
     const created = await this.userRepository.create(cpf);
     return created;
   }
+
+  public async delete(cpf: string): Promise<IUser> {
+    if (!UserValidations.isCpfValid(cpf)) throw new Error('ERRInvalidCpf');
+    const deleted = await this.userRepository.delete(cpf);
+    return deleted;
+  }
+
+  public async findAll(): Promise<IUser[]> {
+    const users = await this.userRepository.findAll();
+    return users;
+  }
+
+  public async findByCpf(cpf: string): Promise<IUser | null> {
+    if (!UserValidations.isCpfValid(cpf)) throw new Error('ERRInvalidCpf');
+    const user = await this.userRepository.findByCpf(cpf);
+    return user;
+  }
 }

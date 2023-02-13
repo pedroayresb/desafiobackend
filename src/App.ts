@@ -1,5 +1,6 @@
 import express from 'express';
 import UserRouter from './routes/UserRouter';
+import ErrorHandler from './middleware/ErrorHandler';
 
 class App {
   public app: express.Express;
@@ -11,6 +12,7 @@ class App {
 
     this.app.get('/', (req, res) => res.json({ ok: true }));
     this.app.use('/users', UserRouter);
+    this.app.use(ErrorHandler.handle);
   }
 
   private config():void {
