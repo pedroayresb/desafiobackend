@@ -4,8 +4,8 @@ import { IUser } from '../models/IUser';
 export default class UserRepository {
   private persistence: PrismaConnection;
 
-  constructor() {
-    this.persistence = new PrismaConnection();
+  constructor(persistence: PrismaConnection) {
+    this.persistence = persistence;
   }
 
   public async findByCpf(cpf: string): Promise<IUser | null> {

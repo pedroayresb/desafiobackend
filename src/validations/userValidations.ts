@@ -1,5 +1,5 @@
 export default class UserValidations {
-  private static cpfIsValid(cpf: string): boolean {
+  public static cpfIsValid(cpf: string): boolean {
     let Soma = 0;
     let Resto;
     if (cpf === '00000000000') return false;

@@ -63,7 +63,9 @@ describe('UserController', () => {
       await controller.createUser();
       expect(next).toHaveBeenCalled();
     });
+  });
 
+  describe('findUser', () => {
     it('deve encontrar o cpf e retornar com 200', async () => {
       const newReq = {
         params: {
@@ -89,7 +91,9 @@ describe('UserController', () => {
       await controller.findUser();
       expect(next).toHaveBeenCalled();
     });
+  });
 
+  describe('deleteUser', () => {
     it('deve deletar o cpf e retornar com 200', async () => {
       const newReq = {
         params: {
@@ -114,7 +118,9 @@ describe('UserController', () => {
       await controller.deleteUser();
       expect(next).toHaveBeenCalled();
     });
+  });
 
+  describe('findAllUsers', () => {
     it('deve retornar todos os cpf e retornar com 200', async () => {
       await controller.findAllUsers();
       expect(res.status).toHaveBeenCalledWith(200);

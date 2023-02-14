@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">19.23% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/26</span>
+                <span class='fraction'>26/26</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">54.54% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>6/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
-                <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">19.23% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/26</span>
+                <span class='fraction'>26/26</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -91,55 +91,55 @@
 <a name='L26'></a><a href='#L26'>26</a>
 <a name='L27'></a><a href='#L27'>27</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export default class UserValidations {
-  private static <span class="fstat-no" title="function not covered" >cpfIsValid(cpf: string): boolean {</span>
-<span class="cstat-no" title="statement not covered" >    let Soma = 0;</span>
-<span class="cstat-no" title="statement not covered" >    let Resto;</span>
-<span class="cstat-no" title="statement not covered" >    if (cpf === '00000000000') return false;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    for (let i = 1; i &lt;= 9; i += 1) Soma += parseInt(cpf.substring(i - 1, i), 10) * (11 - i);</span>
-<span class="cstat-no" title="statement not covered" >    Resto = (Soma * 10) % 11;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    if ((Resto === 10) || (Resto === 11)) Resto = 0;</span>
-<span class="cstat-no" title="statement not covered" >    if (Resto !== parseInt(cpf.substring(9, 10), 10)) return false;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    Soma = 0;</span>
-<span class="cstat-no" title="statement not covered" >    for (let i = 1; i &lt;= 10; i += 1) Soma += parseInt(cpf.substring(i - 1, i), 10) * (12 - i);</span>
-<span class="cstat-no" title="statement not covered" >    Resto = (Soma * 10) % 11;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    if ((Resto === 10) || (Resto === 11)) Resto = 0;</span>
-<span class="cstat-no" title="statement not covered" >    if (Resto !== parseInt(cpf.substring(10, 11), 10)) return false;</span>
-<span class="cstat-no" title="statement not covered" >    return true;</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
+  public static cpfIsValid(cpf: string): boolean {
+    let Soma = 0;
+    let Resto;
+    if (cpf === '00000000000') <span class="branch-0 cbranch-no" title="branch not covered" >return false;</span>
 &nbsp;
-  public static <span class="fstat-no" title="function not covered" >isCpfValid(cpf: string): boolean {</span>
-<span class="cstat-no" title="statement not covered" >    if (cpf.length !== 11) return false;</span>
-<span class="cstat-no" title="statement not covered" >    return this.cpfIsValid(cpf);</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
+    for (let i = 1; i &lt;= 9; i += 1) Soma += parseInt(cpf.substring(i - 1, i), 10) * (11 - i);
+    Resto = (Soma * 10) % 11;
+&nbsp;
+    if ((Resto === 10) || (Resto === 11)) <span class="branch-0 cbranch-no" title="branch not covered" >Resto = 0;</span>
+    if (Resto !== parseInt(cpf.substring(9, 10), 10)) <span class="branch-0 cbranch-no" title="branch not covered" >return false;</span>
+&nbsp;
+    Soma = 0;
+    for (let i = 1; i &lt;= 10; i += 1) Soma += parseInt(cpf.substring(i - 1, i), 10) * (12 - i);
+    Resto = (Soma * 10) % 11;
+&nbsp;
+    if ((Resto === 10) || (Resto === 11)) <span class="branch-0 cbranch-no" title="branch not covered" >Resto = 0;</span>
+    if (Resto !== parseInt(cpf.substring(10, 11), 10)) <span class="branch-0 cbranch-no" title="branch not covered" >return false;</span>
+    return true;
+  }
+&nbsp;
+  public static isCpfValid(cpf: string): boolean {
+    if (cpf.length !== 11) return false;
+    return this.cpfIsValid(cpf);
+  }
 }
 &nbsp;</pre></td></tr></table></pre>
 
@@ -148,7 +148,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-02-14T01:22:42.942Z
+                at 2023-02-14T05:57:32.076Z
             </div>
         <script src="../prettify.js"></script>
         <script>
