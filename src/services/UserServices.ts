@@ -29,6 +29,7 @@ export default class UserService {
   public async findByCpf(cpf: string): Promise<IUser | null> {
     if (!UserValidations.isCpfValid(cpf)) throw new Error('ERRInvalidCpf');
     const user = await this.userRepository.findByCpf(cpf);
+    if (!user) throw new Error('ERRUserDoesNotExists');
     return user;
   }
 }

@@ -39,7 +39,6 @@ export default class UserController {
     try {
       const { cpf } = this.req.params;
       const user: IUser | null = await this.userService.findByCpf(cpf);
-      if (!user) return this.res.status(404).json({ message: 'User not found' });
       return this.res.status(200).json(user);
     } catch (error) {
       return this.next(error);

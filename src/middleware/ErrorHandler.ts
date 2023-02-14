@@ -9,11 +9,9 @@ class ErrorHandler {
   ) {
     if (error.message === 'ERRInvalidCpf') {
       res.status(400).json({ error: error.message });
-      next();
     }
     if (error.message === 'ERRUserAlreadyExists') {
       res.status(409).json({ error: error.message });
-      next();
     }
     if (error.message === 'ERRUserDoesNotExists') {
       res.status(404).json({ error: error.message });
